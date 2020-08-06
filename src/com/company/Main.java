@@ -5,11 +5,18 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("nhap");
+        int k;
+        int tong = 0;
+        System.out.println("nhap so a:");
         Scanner sc = new Scanner(System.in);
-        int number = sc.nextInt();
-        System.out.println("number"+ number);
-        System.out.println("check 1");
-
+        int a = sc.nextInt();
+        while (a!=0){
+            k = a % 10;
+            if(k % 2 == 0){
+                tong += k;
+            }
+            a /= 10;
+        }
+        System.out.println("tong = " + tong);
     }
 }
