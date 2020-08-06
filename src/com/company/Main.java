@@ -1,25 +1,36 @@
 package com.company;
 
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        int a;
         int k;
-        int min = 10;
-        int dem = 0;
+        int a;
+        int demchan = 0;
+        int demle   = 0;
         System.out.println("nhap so a:");
         Scanner sc = new Scanner(System.in);
         a = sc.nextInt();
-        while (a>0){
-            k =  a % 10;
-            a /= 10;
-            if(k < min){
-                min = k;
-                dem += 1;
+        while (a > 0){
+            k = a % 10;
+            if(k % 2 == 0){
+                demchan += 1;
             }
+            if (k % 2 != 0){
+                demle += 1;
+            }
+            a /= 10;
         }
-        System.out.println("so luong chu so nho nhat la: " + dem);
+        if (demchan == 0){
+            System.out.println("Toan chu so le");
+        }
+        if (demle == 0){
+            System.out.println("Toan chu so chan");
+        }
+        if (demchan != 0 && demle != 0){
+            System.out.println("Co ca chan va le");
+        }
     }
 }
